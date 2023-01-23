@@ -1,0 +1,39 @@
+{
+  "loginDetails": [
+    {
+      "username": "rajjyty",
+      "password": "hgh",
+      "id": 1
+    },
+    {
+      "username": "fgrter",
+      "password": "trrtr",
+      "id": 2
+    },
+    {
+      "username": "fgrt",
+      "password": "trrtr",
+      "id": 4
+    },
+    {
+      "username": "haridashan",
+      "password": "sh",
+      "id": 6
+    },
+    {
+      "username": "hari",
+      "password": "fg",
+      "id": 7
+    },
+    {
+      "username": "hai",
+      "password": "rt",
+      "id": 8
+    },
+    {
+      "username": "",
+      "password": "",
+      "id": 9
+    }
+  ]
+}

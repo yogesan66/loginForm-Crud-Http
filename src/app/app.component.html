@@ -1,0 +1,158 @@
+<!-- <div class="container">
+<div>
+  <h3>Buttons</h3>
+  <button mat-raised-button color="primary" >raised</button>
+  <button mat-button color="warn">normal</button>
+  <button mat-flat-button color="accent">flat</button>
+  <button mat-stroked-button >stroked</button>
+</div>
+
+<div>
+  <button mat-icon-button>Icon</button>
+  <button mat-fab color="primary">fab</button>
+  <button mat-mini-fab color="primary">fab</button>
+
+</div>
+
+<div>
+  <h3>Toggle</h3>
+  <mat-button-toggle #togglebtn>Toggle</mat-button-toggle>
+  {{togglebtn.checked}}
+<br><br>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+  <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+  <mat-button-toggle value="React">React</mat-button-toggle>
+  <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{toggleGroup.value}}
+</div>
+<br>
+<div>
+  <h3>Material Icons</h3>
+  <mat-icon>search</mat-icon>
+  <mat-icon >home</mat-icon>
+</div><br><br>
+<div>
+  <h3>Badge</h3>
+  <span [matBadge] ="cart" matBadgeColor ="primary" 
+  matBadgeOverlap="false">Cart</span><br><br>
+  <span matBadge ="10" matBadgeColor ="accent" 
+  matBadgeOverlap="true">Cart</span><br><br>
+  <span matBadge ="10" matBadgeColor ="warn" matBadgePosition ="below after"
+  matBadgeOverlap="false">Cart</span><br><br>
+</div><br><br>
+
+<!--example-->
+<!-- <div class="example">
+   <h3>Shoppind cart</h3>
+  <span [matBadge]="card_value" [matBadgeHidden]="card_value == 0" matBadgeColor="warn" matBadgeOverlap="false"> Cart</span>
+  <br>
+  <button mat-raised-button color="primary" (click)="add()">Add item</button>
+  <button mat-raised-button color="warn" (click)="remove()">Remove item</button>
+</div>
+
+<div>
+  <mat-spinner *ngIf="show"></mat-spinner>
+  <button mat-stroked-button (click)="load()">Load</button>
+  <mat-progress-spinner value="50"></mat-progress-spinner>
+</div><br><br>
+
+<div>
+  <h3>Toolbar</h3>
+  <mat-toolbar class="container2">
+    <div>Angular Material</div>
+    <div class="s">
+      <span>Home</span>
+      <span>About us</span>
+      <span>Contact us</span>
+    </div>
+  </mat-toolbar>
+</div>
+
+<div>
+  <h3>Side bar</h3>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="isopen">Sidenav
+      <button mat-stroked-button (click)="close()"><mat-icon>close</mat-icon></button>
+    </mat-sidenav>
+    <mat-sidenav-content><button mat-stroked-button
+       (click)="isopen =! isopen">
+        <mat-icon>menu</mat-icon>
+    </button></mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div>
+  <h3>Menu</h3>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="sub">Frontend</button>
+    <button mat-menu-item>Backend</button>
+  </mat-menu>
+  <button mat-flat-button [matMenuTriggerFor]="menu">Menu</button>
+
+  <mat-menu #sub = "matMenu">
+    <button mat-menu-item>react</button>
+    <button mat-menu-item>angular</button>
+  </mat-menu>
+</div>
+
+
+
+</div> -->
+
+  <div class="login">
+  <div class="mat-headline rose" >{{heading}}</div>
+  <form [formGroup]="loginForm">
+<mat-form-field floatLabel ="auto" hideRequiredMarker appearance="outline"
+color="accent">
+  <mat-label>Username</mat-label>
+  <input matInput required formControlName="username" [(ngModel)]="user_name">
+  <mat-hint align="end">Min 10 characters</mat-hint>
+</mat-form-field><br><br>
+
+  <mat-form-field floatLabel ="auto" hideRequiredMarker appearance="outline"
+color="accent">
+  <mat-label>Password</mat-label>
+  <input matInput required type="password" formControlName="password" #Input maxlength="10" [(ngModel)]="user_pass">
+  <mat-hint align="end">Max 10 characters</mat-hint>
+</mat-form-field>
+<br><br>
+
+<ng-template #elseBlock>
+<button mat-raised-button color="accent"  (click)="onSubmit()" >Submit</button>
+</ng-template>
+
+<div *ngIf="edit_state == true;else elseBlock">
+<button mat-raised-button color="accent"  (click)="update()" >Update</button>
+</div>
+
+</form>
+
+</div> 
+
+
+<table class="table table-bordered table-hover">
+  <thead class="thead">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of storage_list;let i = index">
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.username}}</td>
+      <td>{{data.password}}</td>
+      <td> <button mat-raised-button color="accent"
+         (click)="delete(data.id)">delete</button> 
+      </td>
+      <td> <button mat-raised-button color="accent"
+        (click)="edit(i)">Edit</button> 
+     </td>
+    </tr>
+
+  </tbody>
+</table>
+
